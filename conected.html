@@ -1,298 +1,532 @@
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تواصل معنا | غيمة ستور</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        * {
-            box-sizing: border-box;
-        }
+<title>تواصل معنا | غيمة ستور</title>
 
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f8f3fc;
-            margin: 0;
-            padding: 0;
-            color: #333;
-            transition: background-color 0.3s, color 0.3s;
-        }
+<style>
 
-        header {
-            background-color: #7044a3;
-            color: white;
-            text-align: center;
-            padding: 25px;
-        }
+* {
+    box-sizing: border-box;
+}
 
-        header p {
-            line-height: 1.8;
-        }
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f3fc;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    transition: 0.3s;
+}
 
-        .page-buttons {
-            text-align: center;
-            padding: 12px;
-            background-color: #f0e7fa;
-        }
+header {
+    background-color: #7044a3;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
 
-        .page-buttons button {
-            width: auto;
-            margin: 5px;
-            padding: 10px 18px;
-            border: none;
-            border-radius: 20px;
-            background-color: #7044a3;
-            color: white;
-            cursor: pointer;
-            font-size: 15px;
-        }
+header p {
+    line-height: 1.8;
+}
 
-        nav {
-            background-color: #573080;
-            text-align: center;
-            padding: 15px;
-        }
+.page-buttons {
+    text-align: center;
+    padding: 12px;
+    background-color: #f0e7fa;
+}
 
-        nav a {
-            display: inline-block;
-            color: white;
-            text-decoration: none;
-            margin: 8px 12px;
-        }
+.page-buttons button {
+    margin: 5px;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 20px;
+    background-color: #7044a3;
+    color: white;
+    cursor: pointer;
+    font-size: 15px;
+}
 
-        nav a:hover {
-            color: #e5c8ff;
-        }
+nav {
+    background-color: #573080;
+    text-align: center;
+    padding: 15px;
+}
 
-        .container {
-            background-color: white;
-            width: 85%;
-            max-width: 600px;
-            margin: 35px auto;
-            padding: 25px;
-            border-radius: 15px;
-            box-shadow: 0 4px 12px #d5c5e8;
-        }
+nav a {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    margin: 8px 12px;
+}
 
-        h2 {
-            color: #7044a3;
-            text-align: center;
-        }
+nav a:hover {
+    color: #e5c8ff;
+}
 
-        .container p {
-            text-align: center;
-            line-height: 1.8;
-        }
+.container {
+    background-color: white;
+    width: 85%;
+    max-width: 600px;
+    margin: 35px auto;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px #d5c5e8;
+}
 
-        label {
-            display: block;
-            margin-top: 15px;
-            font-weight: bold;
-        }
+h2 {
+    color: #7044a3;
+    text-align: center;
+}
 
-        input, textarea {
-            width: 100%;
-            padding: 12px;
-            margin-top: 7px;
-            border: 1px solid #c9b5df;
-            border-radius: 7px;
-            font-size: 16px;
-            font-family: Arial, sans-serif;
-        }
+.container p {
+    text-align: center;
+    line-height: 1.8;
+}
 
-        textarea {
-            height: 120px;
-            resize: vertical;
-        }
+label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+}
 
-        .send-button {
-            width: 100%;
-            background-color: #7044a3;
-            color: white;
-            padding: 13px;
-            margin-top: 20px;
-            border: none;
-            border-radius: 7px;
-            font-size: 17px;
-            cursor: pointer;
-        }
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 7px;
+    border: 1px solid #c9b5df;
+    border-radius: 7px;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+}
 
-        .send-button:hover {
-            background-color: #573080;
-        }
+textarea {
+    height: 120px;
+    resize: vertical;
+}
 
-        footer {
-            background-color: #573080;
-            color: white;
-            text-align: center;
-            padding: 15px;
-            margin-top: 30px;
-        }
+.send-button {
+    width: 100%;
+    background-color: #7044a3;
+    color: white;
+    padding: 13px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 7px;
+    font-size: 17px;
+    cursor: pointer;
+}
 
-        /* الوضع الداكن */
-        body.dark-mode {
-            background-color: #222;
-            color: #f5f5f5;
-        }
+.send-button:hover {
+    background-color: #573080;
+}
 
-        body.dark-mode .page-buttons {
-            background-color: #292929;
-        }
+#successMessage {
+    display: none;
+    background-color: #f5edff;
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    margin-top: 20px;
+}
 
-        body.dark-mode .container {
-            background-color: #383838;
-            color: white;
-            box-shadow: 0 4px 12px #111;
-        }
+#successMessage h3 {
+    color: #7044a3;
+}
 
-        body.dark-mode h2 {
-            color: #d7b4ff;
-        }
+#whatsappLink {
+    display: block;
+    background-color: #25D366;
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    text-decoration: none;
+    margin-top: 15px;
+    font-weight: bold;
+}
 
-        body.dark-mode input,
-        body.dark-mode textarea {
-            background-color: #292929;
-            color: white;
-            border-color: #765b91;
-        }
+footer {
+    background-color: #573080;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 30px;
+}
 
-        body.dark-mode input::placeholder,
-        body.dark-mode textarea::placeholder {
-            color: #ccc;
-        }
+/* الوضع الداكن */
 
-        @media (max-width: 600px) {
-            .container {
-                width: 92%;
-                padding: 18px;
-            }
+body.dark-mode {
+    background-color: #222;
+    color: #f5f5f5;
+}
 
-            nav a {
-                margin: 6px;
-            }
-        }
-    </style>
+body.dark-mode .page-buttons {
+    background-color: #292929;
+}
+
+body.dark-mode .container {
+    background-color: #383838;
+    color: white;
+}
+
+body.dark-mode h2 {
+    color: #d7b4ff;
+}
+
+body.dark-mode input,
+body.dark-mode textarea {
+    background-color: #292929;
+    color: white;
+    border-color: #765b91;
+}
+
+body.dark-mode input::placeholder,
+body.dark-mode textarea::placeholder {
+    color: #ccc;
+}
+
+body.dark-mode #successMessage {
+    background-color: #292929;
+    color: white;
+}
+
+@media (max-width: 600px) {
+    .container {
+        width: 92%;
+        padding: 18px;
+    }
+
+    nav a {
+        margin: 6px;
+    }
+}
+
+</style>
 </head>
 
 <body>
 
-    <header>
-        <h1 data-ar="☁️ غيمة ستور" data-en="☁️ Gima Store">
-            ☁️ غيمة ستور
-        </h1>
+<header>
 
-        <p data-ar="سعيدين بزيارتك، ونحن دائماً في خدمتك"
-           data-en="We are happy to have you. We are always here to help.">
-            سعيدين بزيارتك، ونحن دائماً في خدمتك
-        </p>
-    </header>
+    <h1 data-ar="☁️ غيمة ستور"
+        data-en="☁️ Gima Store">
+        ☁️ غيمة ستور
+    </h1>
 
-    <div class="page-buttons">
-        <button type="button" id="languageButton">🌐 English</button>
-        <button type="button" id="themeButton">🌙 الوضع الداكن</button>
-    </div>
+    <p data-ar="سعيدين بزيارتك، ونحن دائماً في خدمتك"
+       data-en="We are happy to have you. We are always here to help.">
+       سعيدين بزيارتك، ونحن دائماً في خدمتك
+    </p>
+
+</header>
+
+
+<div class="page-buttons">
+
+    <button type="button" id="languageButton">
+        🌐 English
+    </button>
+
+    <button type="button" id="themeButton">
+        🌙 الوضع الداكن
+    </button>
+
+</div>
+
+
 <nav>
-        <a href="home.html"
-           data-ar="الرئيسية" data-en="Home">الرئيسية</a>
 
-        <a href="products.html"
-           data-ar="المنتجات" data-en="Products">المنتجات</a>
-           
-          <a href="offer.html"
-           data-ar="العروض" data-en="Offers">العروض</a>
+    <a href="home.html"
+       data-ar="الرئيسية"
+       data-en="Home">الرئيسية</a>
 
-  <a href="about.html"
-           data-ar="من نحن" data-en="about">العروض</a>
-<a href="logout.html"
-           data-ar="تسجيل خروج" data-en="logout">العروض</a>
+    <a href="products.html"
+       data-ar="المنتجات"
+       data-en="Products">المنتجات</a>
+
+    <a href="offer.html"
+       data-ar="العروض"
+       data-en="Offers">العروض</a>
+
+    <a href="about.html"
+       data-ar="من نحن"
+       data-en="About Us">من نحن</a>
+
+    <a href="logout.html"
+       data-ar="تسجيل خروج"
+       data-en="Logout">تسجيل خروج</a>
+
+</nav>
 
 
+<div class="container">
 
-    </nav>
+    <h2 data-ar="تواصل معنا 💜"
+        data-en="Contact Us 💜">
+        تواصل معنا 💜
+    </h2>
 
-    <div class="container">
-        <h2 data-ar="تواصل معنا 💜" data-en="Contact Us 💜">
-            تواصل معنا 💜
-        </h2>
+    <p
+    data-ar="عندك استفسار عن منتجاتنا أو محتاجة مساعدة؟ أرسلي لينا رسالتك، ويسعدنا التواصل معاك."
+    data-en="Have a question about our products or need help? Send us a message. We will be happy to help.">
+
+    عندك استفسار عن منتجاتنا أو محتاجة مساعدة؟
+    أرسلي لينا رسالتك، ويسعدنا التواصل معاك.
+
+    </p>
+
+
+    <form id="contactForm">
+
+        <label for="name"
+        data-ar="الاسم الكامل:"
+        data-en="Full Name:">
+        الاسم الكامل:
+        </label>
+
+        <input type="text" id="name"
+        placeholder="اكتبي اسمك"
+        data-ar-placeholder="اكتبي اسمك"
+        data-en-placeholder="Enter your name"
+        required>
+
+
+        <label for="phone"
+        data-ar="رقم الهاتف:"
+        data-en="Phone Number:">
+        رقم الهاتف:
+        </label>
+
+        <input type="tel" id="phone"
+        placeholder="أدخلي رقم هاتفك"
+        data-ar-placeholder="أدخلي رقم هاتفك"
+        data-en-placeholder="Enter your phone number"
+        required>
+
+
+        <label for="email"
+        data-ar="البريد الإلكتروني:"
+        data-en="Email Address:">
+        البريد الإلكتروني:
+        </label>
+
+        <input type="email" id="email"
+        placeholder="example@gmail.com"
+        data-ar-placeholder="example@gmail.com"
+        data-en-placeholder="example@gmail.com">
+
+
+        <label for="subject"
+        data-ar="موضوع الرسالة:"
+        data-en="Message Subject:">
+        موضوع الرسالة:
+        </label>
+
+        <input type="text" id="subject"
+        placeholder="موضوع استفسارك"
+        data-ar-placeholder="موضوع استفسارك"
+        data-en-placeholder="Enter your subject"
+        required>
+
+
+        <label for="message"
+        data-ar="رسالتك:"
+        data-en="Your Message:">
+        رسالتك:
+        </label>
+
+        <textarea id="message"
+        placeholder="اكتبي رسالتك هنا..."
+        data-ar-placeholder="اكتبي رسالتك هنا..."
+        data-en-placeholder="Write your message here..."
+        required></textarea>
+
+
+        <button type="submit" class="send-button"
+        data-ar="إرسال الرسالة"
+        data-en="Send Message">
+        إرسال الرسالة
+        </button>
+
+    </form>
+
+
+    <!-- رسالة نجاح الإرسال -->
+
+    <div id="successMessage">
+
+        <h3 data-ar="💜 لقد تم استلام رسالتك بنجاح"
+            data-en="💜 Your message has been received successfully">
+            💜 لقد تم استلام رسالتك بنجاح
+        </h3>
+
+        <p data-ar="شكراً لاختيارك غيمة ستور ☁️"
+           data-en="Thank you for choosing Gima Store ☁️">
+           شكراً لاختيارك غيمة ستور ☁️
+        </p>
 
         <p
-            data-ar="عندك استفسار عن منتجاتنا أو محتاجة مساعدة؟ أرسلي لينا رسالتك، ويسعدنا التواصل معاك."
-            data-en="Have a question about our products or need help? Send us a message. We will be happy to help.">
-            عندك استفسار عن منتجاتنا أو محتاجة مساعدة؟
-            أرسلي لينا رسالتك، ويسعدنا التواصل معاك.
+        data-ar="إذا كان استفسارك مستعجلاً، يمكنك التواصل معنا مباشرة عبر واتساب."
+        data-en="If your inquiry is urgent, you can contact us directly via WhatsApp.">
+        إذا كان استفسارك مستعجلاً،
+        يمكنك التواصل معنا مباشرة عبر واتساب.
         </p>
 
-        <form id="contactForm" method="post">
+        <a id="whatsappLink"
+        href="https://wa.me/message/K567TR7YECUVN1"
+        target="_blank">
 
-            <label for="name"
-                   data-ar="الاسم الكامل:"
-                   data-en="Full Name:">الاسم الكامل:</label>
+        💬 تواصل معنا عبر واتساب
 
-            <input type="text" id="name" name="name"
-                   placeholder="اكتبي اسمك"
-                   data-ar-placeholder="اكتبي اسمك"
-                   data-en-placeholder="Enter your name"
-                   required>
+        </a>
 
-            <label for="phone"
-                   data-ar="رقم الهاتف:"
-                   data-en="Phone Number:">رقم الهاتف:</label>
-
-            <input type="tel" id="phone" name="phone"
-                   placeholder="أدخلي رقم هاتفك"
-                   data-ar-placeholder="أدخلي رقم هاتفك"
-                   data-en-placeholder="Enter your phone number"
-                   required>
-
-            <label for="email"
-                   data-ar="البريد الإلكتروني:"
-                   data-en="Email Address:">البريد الإلكتروني:</label>
-
-            <input type="email" id="email" name="email"
-                   placeholder="example@gmail.com"
-                   data-ar-placeholder="example@gmail.com"
-                   data-en-placeholder="example@gmail.com">
-
-            <label for="subject"
-                   data-ar="موضوع الرسالة:"
-                   data-en="Message Subject:">موضوع الرسالة:</label>
-
-            <input type="text" id="subject" name="subject"
-                   placeholder="موضوع استفسارك"
-                   data-ar-placeholder="موضوع استفسارك"
-                   data-en-placeholder="Enter your subject"
-                   required>
-
-            <label for="message"
-                   data-ar="رسالتك:"
-                   data-en="Your Message:">رسالتك:</label>
-
-            <textarea id="message" name="message"
-                      placeholder="اكتبي رسالتك هنا..."
-                      data-ar-placeholder="اكتبي رسالتك هنا..."
-                      data-en-placeholder="Write your message here..."
-                      required></textarea>
-
-            <button type="submit" class="send-button"
-                    data-ar="إرسال الرسالة"
-                    data-en="Send Message">
-                إرسال الرسالة
-            </button>
-        
-
-        </form>
     </div>
 
-    <footer>
-        <p data-ar="© 2026 غيمة ستور ☁️ | جميع الحقوق محفوظة"
-           data-en="© 2026 Gima Store ☁️ | All rights reserved">
-            © 2026 غيمة ستور ☁️ | جميع الحقوق محفوظة
-        </p>
-    </footer>
+</div>
 
-    
-    <script src="home.js"></script>
+
+<footer>
+
+    <p data-ar="© 2026 غيمة ستور ☁️ | جميع الحقوق محفوظة"
+       data-en="© 2026 Gima Store ☁️ | All rights reserved">
+
+       © 2026 غيمة ستور ☁️ | جميع الحقوق محفوظة
+
+    </p>
+
+</footer>
+
+
+<script>
+
+// تغيير اللغة
+
+const languageButton = document.getElementById("languageButton");
+
+function setLanguage(language) {
+
+    const isArabic = language === "ar";
+
+    document.documentElement.lang = language;
+
+    document.documentElement.dir = isArabic ? "rtl" : "ltr";
+
+    document.querySelectorAll("[data-ar][data-en]").forEach(function(element) {
+
+        element.textContent = isArabic
+            ? element.getAttribute("data-ar")
+            : element.getAttribute("data-en");
+
+    });
+
+    document.querySelectorAll("[data-ar-placeholder][data-en-placeholder]").forEach(function(element) {
+
+        element.placeholder = isArabic
+            ? element.getAttribute("data-ar-placeholder")
+            : element.getAttribute("data-en-placeholder");
+
+    });
+
+    languageButton.textContent = isArabic
+        ? "🌐 English"
+        : "🌐 العربية";
+
+    localStorage.setItem("gimaLanguage", language);
+
+}
+
+languageButton.addEventListener("click", function() {
+
+    const currentLanguage = document.documentElement.lang;
+
+    setLanguage(currentLanguage === "ar" ? "en" : "ar");
+
+});
+
+
+// الوضع الداكن والفاتح
+
+const themeButton = document.getElementById("themeButton");
+
+function setTheme(theme) {
+
+    const isDark = theme === "dark";
+
+    document.body.classList.toggle("dark-mode", isDark);
+
+    themeButton.textContent = isDark
+        ? "☀️ الوضع الفاتح"
+        : "🌙 الوضع الداكن";
+
+    localStorage.setItem("gimaTheme", theme);
+
+}
+
+themeButton.addEventListener("click", function() {
+
+    const isDark = document.body.classList.contains("dark-mode");
+
+    setTheme(isDark ? "light" : "dark");
+
+});
+
+
+// استرجاع الإعدادات المحفوظة
+
+setLanguage(
+    localStorage.getItem("gimaLanguage") === "en" ? "en" : "ar"
+);
+
+setTheme(
+    localStorage.getItem("gimaTheme") === "dark" ? "dark" : "light"
+);
+
+
+// إرسال الرسالة
+
+const contactForm = document.getElementById("contactForm");
+
+const successMessage = document.getElementById("successMessage");
+
+const whatsappLink = document.getElementById("whatsappLink");
+
+contactForm.addEventListener("submit", function(e) {
+
+    e.preventDefault();
+
+    if (!contactForm.checkValidity()) {
+
+        contactForm.reportValidity();
+
+        return;
+
+    }
+
+    // إظهار رسالة النجاح
+
+    successMessage.style.display = "block";
+
+    // إخفاء نموذج التواصل
+
+    contactForm.style.display = "none";
+
+    // رابط واتساب غيمة ستور
+
+    whatsappLink.href =
+        "https://wa.me/message/K567TR7YECUVN1";
+
+    successMessage.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+    });
+
+});
+
+</script>
 
 </body>
 </html>
